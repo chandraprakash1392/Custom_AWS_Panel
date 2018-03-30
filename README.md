@@ -13,3 +13,4 @@ cd Custom_AWS_Panel
 docker build -t <docker_image_tag> .
 
 docker run -it --name aws_custom_panel -p 3000:3000 <docker_image_tag>
+
