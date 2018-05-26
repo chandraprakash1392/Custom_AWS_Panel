@@ -14,14 +14,16 @@ instance    = {}
 access_id   = params.get('access_token').strip()
 secret_key  = params.get('secret_token').strip()
 #aws_region  = params.get('aws_region_name').strip()
+# print (sys.argv[1])
 aws_region  = sys.argv[1]
+
 
 ec2client   = boto3.client('ec2',
                   aws_access_key_id=access_id,
                   aws_secret_access_key=secret_key,
                   region_name=aws_region,)
 
-response    = ec2client.describe_instances();
+response    = ec2client.describe_instances()
 
 for instance_data in response["Reservations"]:
     volumes                              =  []
